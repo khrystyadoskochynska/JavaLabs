@@ -1,0 +1,29 @@
+package com.Khryst.lab1;
+
+import java.util.Scanner;
+/**
+ * Do operations with specified interval. Lab 1.4
+ * @author Khrystya Doskochynska
+ *
+ */
+public class Lab14 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner in = new Scanner(System.in);
+		System.out.println("Input bottom value of interval");
+		int a = in.nextInt();
+		System.out.println("Input top value of interval");
+		int b = in.nextInt();
+		
+		Interval myIn = new Interval(a,b);
+		myIn.oddIncrease();
+		myIn.evenDecrease();
+		
+		System.out.println("Sum of odd numbers: "+myIn.sumOdd() );
+
+	
+
+    }
+}

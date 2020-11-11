@@ -1,0 +1,14 @@
+package com.Khryst.lab1;
+
+public class Lab14 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Interval myIn = new Interval(3,8);
+		myIn.oddIncrease();
+		myIn.evenDecrease();
+	
+
+    }
+}

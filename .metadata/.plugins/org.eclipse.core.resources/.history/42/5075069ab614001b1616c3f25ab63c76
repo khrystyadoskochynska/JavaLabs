@@ -1,0 +1,66 @@
+/**
+ * Package for Lab1
+ */
+package com.Khryst.lab1;
+
+/**
+ * Interval class with methods of operations with intervals
+ * @author Khrystya Doskochynska
+ */
+public class Interval {
+	/**
+	 * 
+	 * @param a bottom value of interval
+	 * @param b bottom value of interval 
+	 */
+	public int a, b;
+
+	public Interval(int a, int b) {
+		super();
+		this.a = a;
+		this.b = b;
+	}
+
+	public Interval() {
+		super();
+	}
+	
+	/**
+	 * Output odd number by increase
+	 */
+    public void oddIncrease() {
+		System.out.println("Odd number by increase");
+    	for(int i=a; i<=b; i++ )
+		{
+			if(i%2 != 0) {
+				System.out.println(i);
+			}
+		}
+	}
+    
+    public void evenDecrease() {
+		System.out.println("Even number by decrease");
+    	for(int i=b; i>=a; i-- )
+		{
+			if(i%2 == 0) {
+				System.out.println(i);
+			}
+		}
+	}
+    
+    public int sumOdd() {
+    	
+    	int sum = 0;
+    	for(int i=a; i<=b; i++ )
+		{
+			if(i%2 != 0) {
+				System.out.println(i);
+				sum = sum+i;
+			
+			}
+		}
+    	return sum;
+    }
+    
+    
+}
