@@ -1,7 +1,7 @@
 package droid;
 
 public abstract class Droid {
-	
+
 	protected String name;
 	protected double health;
 	protected double damage;
@@ -48,13 +48,13 @@ public abstract class Droid {
 		this.regeneration = regeneration;
 	}
 
-	//get the hit
-	public void strike (Droid Enemy) {
-		
+	// get the hit
+	public void strike(Droid Enemy) {
+
 	}
-	
-	public void takeHit (double levelHit) {
-		
+
+	public void takeHit(double levelHit) {
+
 	}
-	
+
 }

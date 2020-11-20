@@ -21,6 +21,7 @@ public class Defender extends Droid {
 		} else {
 			health = health - levelHit;
 		}
-		System.out.println("Current level of health of "+this.name + "\tis\t" +this.health);
+		String healthFormatted = String.format("%.2f", health);
+		System.out.println("Current level of health of " + this.name + "\tis\t" + healthFormatted);
 	}
 }
