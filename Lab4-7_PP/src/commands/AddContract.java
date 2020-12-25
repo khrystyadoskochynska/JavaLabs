@@ -34,9 +34,13 @@ public class AddContract implements Command {
 		int productionYear = scanner.nextInt();
 		contract.setProductionYear(productionYear);
 
-		System.out.println("Input amount of your drive experience: \n");
-		int drivingExp = scanner.nextInt();
-		contract.setDrivingExp(drivingExp);
+		System.out.println("Input cost of your car (insurance coverage): \n");
+		  double insuranceCoverage = scanner.nextDouble();
+		  contract.setInsuranceCoverage(insuranceCoverage);
+		  
+		//System.out.println("Input amount of your drive experience: \n");
+		//int drivingExp = scanner.nextInt();
+		//contract.setDrivingExp(drivingExp);
 
 		// contract.toString();
 
@@ -69,10 +73,12 @@ public class AddContract implements Command {
 
 			System.out.println("Would you like to add one more risk type? \n Press 'y' for yes; 'n' for no");
 			addNextRisk = scanner.next().charAt(0);
-			System.out.println("Scanned addNextRisk = "+ addNextRisk);
+			//System.out.println("Scanned addNextRisk = "+ addNextRisk);
 			//addNextRisk = "yes";
 		} while (addNextRisk == 'y');
 		
+		contract.calculateCoeficient();
+		contract.calculateCost();
 		//scanner.close();
 	}
 

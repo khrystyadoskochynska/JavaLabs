@@ -9,9 +9,8 @@ import insurance.RisksCoef;
 
 import java.time.LocalDate;
 
-public class Contract implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
+public class Contract  {
+
 	private int ID;
 	private List<RisksCoef> risks = new ArrayList<RisksCoef>();
 	private String clientName;
@@ -26,12 +25,11 @@ public class Contract implements Serializable {
 	private LocalDate dateEnd;
 
 	private static int ContractIDCounter = 0;
-	
+
 	public Contract() {
 		this.ID = ContractIDCounter++;
 	}
 
-	
 	public void setID(int iD) {
 		ID = iD;
 	}
@@ -47,10 +45,6 @@ public class Contract implements Serializable {
 	public void addRisk(RisksCoef risk) {
 		this.risks.add(risk);
 	}
-	
-
-
-
 
 	public String getClientName() {
 		return clientName;
@@ -132,23 +126,38 @@ public class Contract implements Serializable {
 		this.dateEnd = dateEnd;
 	}
 
-	
+	public void calculateCoeficient() {
+		ListIterator<RisksCoef> iterator = risks.listIterator();
+		this.coef = 1;
+ 
+		while (iterator.hasNext()) {
+			// System.out.println("All risks : " + iterator.next());
+
+			this.coef *= iterator.next().getCoef();
+		}
+
+	}
+
+	public void calculateCost() {
+		this.insuranceCost = this.insuranceCoverage * this.coef/100;
+	}
+
 	@Override
 	public String toString() {
-		  ListIterator<RisksCoef> iterator = risks.listIterator(); 
-String allRisks = "" ;
-      // Printing the iterated value 
-     // System.out.println("\nUsing ListIterator:\n"); 
-      while (iterator.hasNext()) { 
-          //System.out.println("All risks : " + iterator.next()); 
-          
-          allRisks += iterator.next().name() + ",";
-      } 
-      //return "Contract [ID=" + ID + "]";
-	return "Contract ID=" + ID + " \n  clientName=" + clientName + " \n  insuranceCoverage=" + insuranceCoverage
-				+ ", insuranceCost=" + insuranceCost + ", coef=" + coef + ", carModel=" + carModel + ", productionYear="
-				+ productionYear + ", drivingExp=" + drivingExp + ", drivingExpCoef=" + drivingExpCoef + ", dateStart="
-				+ dateStart + ", dateEnd=" + dateEnd + "\nrisks: " + allRisks + "]\n";
+		ListIterator<RisksCoef> iterator = risks.listIterator();
+		String allRisks = "";
+		// Printing the iterated value
+		// System.out.println("\nUsing ListIterator:\n");
+		while (iterator.hasNext()) {
+			// System.out.println("All risks : " + iterator.next());
+
+			allRisks += iterator.next().name() + ",";
+		}
+		// return "Contract [ID=" + ID + "]";
+		return "Contract ID=" + ID + "\n" + "  clientName=" + clientName + "\n" + "  carModel=" + carModel + "\n"
+				+ "  productionYear=" + productionYear + " \n" + "  insuranceCoverage=" + insuranceCoverage + "\n"
+				+ "  insuranceCost=" + insuranceCost + "\n" + "  coeficient =" + coef + "\n" + "  risks: " + allRisks
+				+ "\n";
 	}
 
 }

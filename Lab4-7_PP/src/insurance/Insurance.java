@@ -10,10 +10,10 @@ import contracts.Contract;
 public class Insurance {
 	
 	private static void printMenu() {
-		System.out.println("1) Calculating the cost of insurance;");
-		//System.out.println("2) Accepting the cost by client and signing the contract;");
+		System.out.println("1) Create new contract;");
 		System.out.println("2) Searching information about the contract by contract ID;");
-		System.out.println("3) Exit from the program;");
+		System.out.println("3) Output all contracts;");
+		System.out.println("4) Exit from the program;");
 	}
 
 	public static void start() {
@@ -35,16 +35,15 @@ public class Insurance {
 				switch (key) {
 				
 				case 1:
-					System.out.println("Cost will be calculated. \n");
+					System.out.println("Creating new contract \n");
 					Contract contract = new Contract();
 					
 					
 					AddContract addContract = new AddContract(contract);
 					menu.executeCommand(addContract);
-					//System.out.println(contract.toString());
+					System.out.println(contract.toString());
 					//contract.getClientName();
 					allContracts.AddContractToList(contract);
-					allContracts.printAllContracts();
 					break;
 			
 				case 2:
@@ -55,8 +54,12 @@ public class Insurance {
 					menu.executeCommand(findContract);
 					
 					break;
-					
 				case 3:
+					System.out.println("List of all contracts: ");
+					allContracts.printAllContracts();
+					return ;
+			
+				case 4:
 					System.out.println("Ending of the program");
 					return ;
 			
