@@ -20,8 +20,8 @@ public class FindContract implements Command {
 	@Override
 	public void execute() {
 		List<Contract> listAllContracts = new ArrayList<>(allContracts.getAllContracts());
-
 		ListIterator<Contract> iterator = listAllContracts.listIterator();
+		//ListIterator<Contract> iterator = allContracts.listAllContracts.listIterator();
 		boolean found = false;
 		
 		while (iterator.hasNext()) {
