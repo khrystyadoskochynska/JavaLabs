@@ -7,7 +7,12 @@ import org.junit.runners.Suite;
 
 @Suite.SuiteClasses({
    TestContractCost.class,
-   TestUniqueID.class
+   TestUniqueID.class,
+   TestRiskTheft.class,
+   TestRiskIatp.class,
+   TestRiskRoadAccident.class,
+   TestRiskNaturalDisaster.class,
+   TestRiskWithoutPolice.class
 })
 
 public class TestSuite {

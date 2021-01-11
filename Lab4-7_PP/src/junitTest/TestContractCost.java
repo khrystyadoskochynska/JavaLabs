@@ -29,8 +29,8 @@ public class TestContractCost {
 		double testCoef = 3.8*1.1*1.23*1.15*1.05;
 		double testCost = 500000*testCoef/100;
 		System.out.println("Calculated cost by test: "+testCost);
-		double result = contract.getInsuranceCost();
-		assertEquals(testCost, result,0.01);
+		//double result = contract.getInsuranceCost();
+		assertEquals(testCost, contract.getInsuranceCost(),0.01);
 		//assertEquals(500000,contract.getInsuranceCoverage(),0.1);
 		//assertEquals("Tina",contract.getClientName());
 		
