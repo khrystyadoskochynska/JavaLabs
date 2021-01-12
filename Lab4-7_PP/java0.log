@@ -1,0 +1,18 @@
+ЯЁВ. 13, 2021 1:23:33 до insurance.Insurance main
+INFO: Start application
+ЯЁВ. 13, 2021 1:23:33 до insurance.Insurance printMenu
+INFO: Print menu
+ЯЁВ. 13, 2021 1:23:43 до insurance.Insurance start
+INFO: Adding new contract
+ЯЁВ. 13, 2021 1:24:02 до insurance.Insurance start
+INFO: New contract added: Contract ID=0
+  clientName=sdf
+  carModel=dfs
+  productionYear=333 
+  insuranceCoverage=4444.0
+  insuranceCost=168.872
+  coeficient =3.8
+  risks: theft,
+
+ЯЁВ. 13, 2021 1:24:02 до insurance.Insurance printMenu
+INFO: Print menu

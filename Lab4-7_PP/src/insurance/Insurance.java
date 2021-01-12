@@ -1,6 +1,7 @@
 package insurance;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 import commands.AddContract;
 import commands.FindContract;
@@ -9,7 +10,10 @@ import contracts.Contract;
 
 public class Insurance {
 	
+	private static Logger log = Logger.getLogger(Insurance.class.getName());
+	
 	private static void printMenu() {
+		log.info("Print menu");
 		System.out.println("1) Create new contract;");
 		System.out.println("2) Searching information about the contract by contract ID;");
 		System.out.println("3) Output all contracts;");
@@ -35,6 +39,7 @@ public class Insurance {
 				switch (key) {
 				
 				case 1:
+					log.info("Adding new contract");
 					System.out.println("Creating new contract \n");
 					Contract contract = new Contract();
 					
@@ -44,6 +49,9 @@ public class Insurance {
 					System.out.println(contract.toString());
 					//contract.getClientName();
 					allContracts.AddContractToList(contract);
+					String logAddedContract = "New contract added: ";
+					logAddedContract += contract.toString();
+					log.info(logAddedContract);
 					break;
 			
 				case 2:
@@ -65,6 +73,7 @@ public class Insurance {
 			
 				default:
 					System.out.println("Your chosen option isn't correct. Try again. \n");
+					log.info("Incorrect selection from menu");
 				}
 			} while (key != 4);
 		
@@ -75,7 +84,7 @@ public class Insurance {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		log.info("Start application");
 		//printMenu();
 		start();
 

@@ -1,0 +1,24 @@
+ЯЁВ. 13, 2021 1:33:18 до insurance.Insurance main
+INFO: Start application
+ЯЁВ. 13, 2021 1:33:19 до insurance.Insurance printMenu
+INFO: Print menu
+ЯЁВ. 13, 2021 1:33:48 до insurance.Insurance start
+INFO: Adding new contract
+ЯЁВ. 13, 2021 1:33:48 до commands.AddContract <init>
+INFO: constructor in AddContract
+ЯЁВ. 13, 2021 1:33:48 до commands.AddContract execute
+INFO: Execute function in AddContract
+ЯЁВ. 13, 2021 1:34:02 до commands.AddContract execute
+INFO: Risk theft added
+ЯЁВ. 13, 2021 1:34:12 до insurance.Insurance start
+INFO: New contract added: Contract ID=0
+  clientName=wew
+  carModel=ewe
+  productionYear=222 
+  insuranceCoverage=333.0
+  insuranceCost=12.653999999999998
+  coeficient =3.8
+  risks: theft,
+
+ЯЁВ. 13, 2021 1:34:12 до insurance.Insurance printMenu
+INFO: Print menu

@@ -1,21 +1,25 @@
 package commands;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 import contracts.Contract;
+import insurance.Insurance;
 import insurance.RisksCoef;
 
 public class AddContract implements Command {
 	private Contract contract;
+	private Logger log = Logger.getLogger(AddContract.class.getName());
 
 	public AddContract(Contract contract) {
 		this.contract = contract;
+		log.info("constructor in AddContract");
 	}
 
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		
+		log.info("Execute function in AddContract");
 		char addNextRisk;
 		int riskIndex;
 
@@ -53,6 +57,7 @@ public class AddContract implements Command {
 
 			case 1:
 				contract.addRisk(RisksCoef.theft);
+				log.info("Risk theft added");
 				break;
 			case 2:
 				contract.addRisk(RisksCoef.iatp);
