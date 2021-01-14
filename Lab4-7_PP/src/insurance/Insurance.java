@@ -5,13 +5,14 @@ import java.util.logging.Logger;
 
 import commands.AddContract;
 import commands.FindContract;
+import commands.SendMail;
 import contracts.AllContracts;
 import contracts.Contract;
 
 public class Insurance {
-	
+
 	private static Logger log = Logger.getLogger(Insurance.class.getName());
-	
+
 	private static void printMenu() {
 		log.info("Print menu");
 		System.out.println("1) Create new contract;");
@@ -25,67 +26,80 @@ public class Insurance {
 		MenuCommandExecute menu = new MenuCommandExecute();
 		AllContracts allContracts = new AllContracts();
 		Scanner scanner = new Scanner(System.in);
-		//String s = scanner.nextLine();
-		//System.out.println(s);
+		// String s = scanner.nextLine();
+		// System.out.println(s);
+
+	
 		
-			int key;
-			do {
-				
-				System.out.println("Select the option from menu: \n");
-				
-				printMenu();
+		int key;
+		
+		do {
+			
+			System.out.println("Select the option from menu: \n");
+
+			printMenu();
+			
+			try {
+						
+				//key = scanner.next().charAt(0);
 				key = scanner.nextInt();
+				 
 				
 				switch (key) {
-				
+
 				case 1:
 					log.info("Adding new contract");
 					System.out.println("Creating new contract \n");
 					Contract contract = new Contract();
-					
-					
+
 					AddContract addContract = new AddContract(contract);
 					menu.executeCommand(addContract);
 					System.out.println(contract.toString());
-					//contract.getClientName();
+					// contract.getClientName(); 
 					allContracts.AddContractToList(contract);
-					String logAddedContract = "New contract added: ";
+					String logAddedContract = "New contract added:\n";
 					logAddedContract += contract.toString();
 					log.info(logAddedContract);
 					break;
-			
+
 				case 2:
 					System.out.println("To find contract type insuranse ID: \n");
 					int findContractByID = scanner.nextInt();
 					
-					FindContract findContract = new FindContract(allContracts,findContractByID);	
+					log.info("Try to find contract with ID " + findContractByID);
+
+					FindContract findContract = new FindContract(allContracts, findContractByID);
 					menu.executeCommand(findContract);
-					
+
 					break;
-				case 3:
+				case 3:					
 					System.out.println("List of all contracts: ");
 					allContracts.printAllContracts();
-					return ;
-			
+					return;
+
 				case 4:
 					System.out.println("Ending of the program");
-					return ;
-			
+					return;
+
 				default:
 					System.out.println("Your chosen option isn't correct. Try again. \n");
 					log.info("Incorrect selection from menu");
 				}
-			} while (key != 4);
-		
+			} catch (Exception e) {
+				log.warning("Incorrect symbol in selection from menu");
+				key = 0;
+				String resetInput  = scanner.next();
+			}
+
+		} while (key != 4);
+
 		scanner.close();
 	}
-
-	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		log.info("Start application");
-		//printMenu();
+		// printMenu();
 		start();
 
 	}
